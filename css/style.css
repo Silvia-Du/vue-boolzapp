@@ -3,3 +3,113 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* GENERAL */
+
+.debug{
+  background-color: rgba(165, 42, 42, 0.54);
+  border: 1px solid black;
+}
+
+/* MAIN */
+main{
+  height: 100vh;
+}
+
+.main-top{
+  height: 150px;
+  background-color: #009688;
+}
+
+.main-bottom{
+  height: calc(100vh - 150px);
+  background-color: #d8dbd5;
+}
+
+/* APP CONTAINER */
+.app-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 800px;
+  width: 80%;
+  display: flex;
+}
+
+.app-container .left-side .header,
+.app-container .right-side .header,
+.app-container .right-side .footer{
+  height: 65px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eaeaea;
+}
+
+.user{
+  width: 70px;
+  height: 50px;
+  background-color: #009688;
+}
+/* LEFT-SIDE */
+
+.app-container .left-side{
+  width: 30%;
+}
+/* left-s HEADER */
+
+.left-side .header{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-side .header i,
+.right-side .header i{
+  font-size: 1.3rem;
+  color: #b1b1b1;
+  margin: 0 7px;
+}
+
+/* notifiche */
+
+.left-side .notifiche{
+  height: 70px;
+  background-color: #8edafc;
+}
+
+
+/* chats */
+
+
+.left-side .chats{
+  height: calc(100% - 135px);
+  background-color: #ffffff;
+}
+
+/* RIGHT SIDE */
+
+.app-container .right-side{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* right-s footer */
+.right-side .footer i{
+  font-size: 1.3rem;
+  color: #6b7376;
+  margin: 0 15px;
+}
+
+.right-side .footer input{
+  width: 100%;
+  margin: 0 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
