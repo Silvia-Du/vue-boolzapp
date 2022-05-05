@@ -11,9 +11,22 @@
   border: 1px solid black;
 }
 
+.d-flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
 /* MAIN */
 main{
   height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main-top{
@@ -42,17 +55,14 @@ main{
 .app-container .right-side .footer{
   height: 65px;
   padding: 0 10px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #eaeaea;
 }
 
-.user{
-  width: 70px;
-  height: 50px;
-  background-color: #009688;
-}
+
 /* LEFT-SIDE */
 
 .app-container .left-side{
@@ -65,36 +75,75 @@ main{
   align-items: center;
 }
 
+.left-side .header .user{
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgb(44, 40, 40);
+ }
+
 .left-side .header i,
 .right-side .header i{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #b1b1b1;
   margin: 0 7px;
+}
+
+/* chats */
+
+.left-side .chats{
+  height: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.left-side .chats input{
+  position: relative;
+  width: 97%;
+  padding: 7px 3px 7px 70px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.left-side .chats i{
+  position: absolute;
+  left: 28px;
+  top: 153px;
+  color: #b1b1b1;
 }
 
 /* notifiche */
 
 .left-side .notifiche{
-  height: 70px;
   background-color: #8edafc;
+  padding: 10px 15px;
 }
 
-
-/* chats */
-
-
-.left-side .chats{
-  height: calc(100% - 135px);
-  background-color: #ffffff;
+.left-side .notifiche .img-container{
+  background-color: #f2fbff;
+  display: flex;
+  font-size: 1.3rem;
+  color: #8edafc;
+  justify-content: center;
+  align-items: center;
 }
 
 /* RIGHT SIDE */
 
 .app-container .right-side{
   width: 70%;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+}
+
+/* right-side Main */
+
+.right-side .main{
+  height: 100%;
+  background-image: url(../img/bdde67542ad0af6cfb29a723e2f1fb67.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 
