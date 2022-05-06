@@ -231,10 +231,8 @@ const app = new Vue({
 
         this.newMessage ='';
         setTimeout(()=>{
-            console.log(this.botMessages);
 
             const botMessage = {
-
                 date: `${this.getDate()} ${this.getHour()}`,
                 message: this.botMessages[this.randomNum( 0 , this.botMessages.length -1 )],
                 status: 'received'
@@ -248,6 +246,22 @@ const app = new Vue({
         return Math.floor(Math.random() * (max - min +1) + min);
       },
 
+      getRandomAccess(){
+
+        let hour = this.randomNum( 0 , 23 );
+        let min = this.randomNum( 0 , 59 );
+        console.log(hour);
+        console.log(min);
+        if(hour < 10){
+            hour = '0'+ hour;
+        }
+        if(min < 10){
+            min = '0'+ min;
+        }
+        return `${hour}:${min}`;
+
+      },
+
       getDate(){
         const now = new Date();
         let day = now.getDay();
@@ -256,7 +270,7 @@ const app = new Vue({
           day = `0${day}`;
           month = `0${month}`;
         }
-        return `${day} / ${month} / ${now.getFullYear()}`
+        return `${day}/${month}/${now.getFullYear()}`
       },
   
       getHour(){
@@ -270,7 +284,7 @@ const app = new Vue({
           m= `0${m}`;
           s= `0${s}`;
         }
-        return `${h} / ${m} / ${s}`;
+        return `${h}/${m}/${s}`;
       }
  
     }

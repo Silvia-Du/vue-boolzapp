@@ -11,6 +11,10 @@
   border: 1px solid black;
 }
 
+body{
+  font-family: 'Lato', sans-serif;;
+}
+
 .d-flex-column{
   display: flex;
   flex-direction: column;
@@ -34,7 +38,6 @@ main{
   background-image: 
   linear-gradient(to bottom,
   #249688 20%, #dcdbd2 0%) ;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* APP CONTAINER */
