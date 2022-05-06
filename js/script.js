@@ -247,30 +247,7 @@ const app = new Vue({
       randomNum( min , max ){
         return Math.floor(Math.random() * (max - min +1) + min);
       },
-
-      searchContact(){
-
-        console.log(this.tipedLetter);
-       
-
-        this.contacts.forEach((contact, index)=>{
-            // console.log(contact.name);
-            for (let i = 0; i < contact.name.length; i++) {
-
-                const element = contact.name.split('');
-                // console.log(element);
-                if(element.includes(this.tipedLetter)){
-                    console.log(contact.name);
-                }
-            }
-
-        })
-      }
-
-     
-
-      
-        
+ 
     }
 
  //ogni volta che viene digitata una lettera viene confrontata con le lettere presenti nei nomi dei contatti.
