@@ -7,6 +7,7 @@
    <!-- fontawesom -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- /fontawesom -->
+   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Boolzapp</title>
 </head>
@@ -15,13 +16,11 @@
   <div id="app">
     <!-- MAIN -->
     <main>
-      <div class="main-top"></div>
-      <div class="main-bottom"></div>
       <!-- app container -->
       <div class="app-container">
 
-        <!-- LEFT SIDE -->
-        <div class="left-side d-flex-column">
+        <!-- LEFT COL -->
+        <div class="left-col d-flex-column">
 
           <!--left-s header -->
           <div class="header">
@@ -55,99 +54,28 @@
             <i class="fa-solid fa-magnifying-glass"></i>
 
             <!-- chat chatElement -->
-            <div class="chat">
-
+            <div v-for="(contact, index) in contacts" class="chat">
+          
               <div class="left">
-                <img class="img-avatar" src="./img/avatar_1.jpg" alt="avatar 1">
+                <img class="img-avatar" :src="`./img/avatar${contact.avatar}.jpg`" alt="contact.name">
 
                 <div class="text">
-                  <p class="name">Michele</p>
-                  <p class="last-message">ultimo messaggio</p>
+                  <p class="contact-name">{{contact.name}}</p>
+                  <p class="last-message">{{contact.messages[0].message}}</p>
                 </div> 
               </div>
 
               <div class="right">
-                <p class="hour">20.20.20</p>
+                <p class="hour">{{getDate(contact)}}</p>
               </div>
               
             </div>
-
-            <!-- chat chatElement -->
-            <div class="chat">
-
-              <div class="left">
-                <img class="img-avatar" src="./img/avatar_1.jpg" alt="avatar 1">
-
-                <div class="text">
-                  <p class="name">Michele</p>
-                  <p class="last-message">ultimo messaggio</p>
-                </div> 
-              </div>
-
-              <div class="right">
-                <p class="hour">20.20.20</p>
-              </div>
-              
-            </div>
-
-            <!-- chat chatElement -->
-            <div class="chat">
-
-              <div class="left">
-                <img class="img-avatar" src="./img/avatar_1.jpg" alt="avatar 1">
-
-                <div class="text">
-                  <p class="name">Michele</p>
-                  <p class="last-message">ultimo messaggio</p>
-                </div> 
-              </div>
-
-              <div class="right">
-                <p class="hour">20.20.20</p>
-              </div>
-              
-            </div>
-
-            <!-- chat chatElement -->
-            <div class="chat">
-
-              <div class="left">
-                <img class="img-avatar" src="./img/avatar_1.jpg" alt="avatar 1">
-
-                <div class="text">
-                  <p class="name">Michele</p>
-                  <p class="last-message">ultimo messaggio</p>
-                </div> 
-              </div>
-
-              <div class="right">
-                <p class="hour">20.20.20</p>
-              </div>
-              
-            </div>
-
-            <!-- chat chatElement -->
-            <div class="chat">
-
-              <div class="left">
-                <img class="img-avatar" src="./img/avatar_1.jpg" alt="avatar 1">
-
-                <div class="text">
-                  <p class="name">Michele</p>
-                  <p class="last-message">ultimo messaggio</p>
-                </div> 
-              </div>
-
-              <div class="right">
-                <p class="hour">20.20.20</p>
-              </div>
-              
-            </div>
+            
           </div>
         </div>
 
         <!-- RIGHT SIDE -->
-        <div class="right-side d-flex-column">
+        <div class="right-col d-flex-column">
           <!-- header -->
           <div class="header">
             <div class="avatar-container">
@@ -165,19 +93,15 @@
             </div>
           </div>
           <!-- main -->
-          <div class="main">
-            <div class="row sent">
-              <div class="message sent">
-                <span>Lorem ipsum dolor sit amet consectetur .</span>
-              </div>
+          <div class="center">
+
+            <div class="mex" :class="mexReceived">
+              <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, atque.</span>
+            </div>
+            <div class="mex" :class="mexSent">
+              <span>Lorem ipsum .</span>
             </div>
             
-
-            <div class="row">
-              <div class="message received">
-                <span>Lorem ipsum dolor.</span>
-              </div>
-            </div>
 
           </div>
           <!-- footer -->
@@ -193,7 +117,7 @@
     <!-- /MAIN -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+ 
   <script src="js/script.js"></script>
 </body>
 </html>

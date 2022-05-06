@@ -17,8 +17,8 @@
 }
 
 .img-avatar{
-  height: 55px;
-  width: 55px;
+  height: 50px;
+  width: 50px;
   margin-right: 10px;
   border-radius: 50%;
 }
@@ -31,17 +31,10 @@
 /* MAIN */
 main{
   height: 100vh;
+  background-image: 
+  linear-gradient(to bottom,
+  #249688 20%, #dcdbd2 0%) ;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.main-top{
-  height: 150px;
-  background-color: #009688;
-}
-
-.main-bottom{
-  height: calc(100vh - 150px);
-  background-color: #d8dbd5;
 }
 
 /* APP CONTAINER */
@@ -56,9 +49,9 @@ main{
   display: flex;
 }
 
-.app-container .left-side .header,
-.app-container .right-side .header,
-.app-container .right-side .footer{
+.app-container .left-col .header,
+.app-container .right-col .header,
+.app-container .right-col .footer{
   height: 65px;
   padding: 0 10px;
   flex-shrink: 0;
@@ -69,20 +62,20 @@ main{
 }
 
 
-/* LEFT-SIDE */
+/* left-col */
 
-.app-container .left-side{
+.app-container .left-col{
   width: 30%;
 }
 /* left-s HEADER */
 
-.left-side .header{
+.left-col .header{
   justify-content: space-between;
   align-items: center;
   border-right: 1px solid rgb(204, 195, 195);
 }
 
-.left-side .header .user{
+.left-col .header .user{
   display: flex;
   align-items: center;
   font-size: 0.9rem;
@@ -90,8 +83,8 @@ main{
   color: rgb(44, 40, 40);
  }
 
-.left-side .header i,
-.right-side .header i{
+.left-col .header i,
+.right-col .header i{
   font-size: 1.2rem;
   color: #b1b1b1;
   margin: 0 7px;
@@ -100,31 +93,32 @@ main{
 
 /* notifiche */
 
-.left-side .notifiche{
+.left-col .notifiche{
   display: flex;
   align-items: center;
   background-color: #8edafc;
   padding: 10px 15px;
 }
 
-.left-side .notifiche .subtitle{
+.left-col .notifiche .subtitle{
   font-size: 0.75rem;
   color: #6b7376;
   text-decoration: underline;
 }
 
-.left-side .notifiche .img-avatar{
+.left-col .notifiche .img-avatar{
   background-color: #f2fbff;
   display: flex;
   font-size: 1.3rem;
   color: #8edafc;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* chats */
 
-.left-side .chats{
+.left-col .chats{
   position: relative;
   height: 100%;
   background-color: #f8f9fa;
@@ -132,7 +126,7 @@ main{
   overflow-y: auto;
 }
 
-.left-side .chats input{
+.left-col .chats input{
   width: 97%;
   margin: 10px 0;
   padding: 7px 3px 7px 70px;
@@ -140,7 +134,7 @@ main{
   border-width: 0px;
 }
 
-.left-side .chats i{
+.left-col .chats i{
   position: absolute;
   left: 33px;
   top: 21px;
@@ -166,7 +160,7 @@ main{
   align-self: flex-start;
 }
 
-.chat .name{
+.chat .contact-name{
   font-weight: bold;
   color: #6b7376;
 }
@@ -183,12 +177,12 @@ main{
 
 /* RIGHT SIDE */
 
-.app-container .right-side{
+.app-container .right-col{
   width: 70%;
   justify-content: space-between;
 }
 
-/* right-side Header */
+/* right-col Header */
 .avatar-container{
   display: flex;
 }
@@ -201,49 +195,52 @@ main{
   font-size: 0.8rem;
   color: #6b7376;
 }
-/* right-side Main */
+/* right-col CENTER */
 
-.right-side .main{
+.right-col .center{
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  font-size: 0.8rem;
   background-image: url(../img/mine.jpg);
   background-position: center;
   padding: 60px 80px;
   overflow-y: auto;
 }
 
-.main .row{
-  margin-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
+.right-col .center .mex.sent{
+  background-color: #d5f9ba;
+  align-self: flex-end;
+  
 }
 
-.main .row.sent{
-  justify-content: flex-end;
-}
-
-.main .message{
-  min-width: 40%;
-  max-width: 50%;
-  padding: 15px 20px;
-  border-radius: 10px;
-}
-
-.main .row .message.sent{
- background-color: #d5f9ba;
-}
-
-.main .message.received{
+.right-col .center .mex.received{
   background-color: white;
+  align-self: flex-start;
 }
 
-/* right-s footer */
-.right-side .footer i{
+.right-col .center .mex{
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  min-width: 40%;
+  max-width: 60%;
+  text-align: left;
+}
+
+
+
+
+
+/* right-col footer */
+.right-col .footer i{
   font-size: 1.3rem;
   color: #6b7376;
   margin: 0 15px;
 }
 
-.right-side .footer input{
+.right-col .footer input{
   width: 100%;
   margin: 0 10px;
   padding: 15px;
