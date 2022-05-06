@@ -192,9 +192,18 @@ const app = new Vue({
         avatar: '_io',
     },
 
+    botMessages: [
+
+        'eh immagino, ma tu come stai', 
+
+        'I vincenti trovano strade, i perdenti trovano scuse', 
+
+        'Feel the fear and do it anyway',
+        
+        'una frase molto saggia'
+    ],
+
     newMessage:'',
-    mexReceived: 'received',
-    mexSent: 'sent',
     activeContact: 1,
   },
 
@@ -211,20 +220,40 @@ const app = new Vue({
 
       getNewMessage(){
 
-          const message = {
+        const message = {
             date: 'la data di adesso e l\'orario di adesso',
             message: this.newMessage,
             status: 'sent'
         }
 
         this.contacts[this.activeContact].messages.push(message);
-        
-          this.newMessage ='';
+
+        this.newMessage ='';
+        setTimeout(()=>{
+            console.log(this.botMessages);
+
+            const botMessage = {
+                
+                date: 'la data di adesso e l\'orario di adesso',
+                message: this.botMessages[this.randomNum( 0 , this.botMessages.length )],
+                status: 'received'
+            }
+            this.contacts[this.activeContact].messages.push(botMessage);
+
+        },1000);
+      },
+
+      randomNum( min , max ){
+        return Math.floor(Math.random() * (max - min +1) + min);
       }
 
      
-  }
- //all'evento dell'invio, il messaggio digitato diventa un nuovo messaggio pushato nell'array dei messaggi, cn classe sent
+
+      
+        
+    }
+
+ //dopo tot secondi dall'attivazione della funzione stampa mex in pagina, viene generato un nuovo messaggio con classe received, uso bandierina che ritorna falsa dopo l'invio, pesca i messaggi da un'array di oggetti messaggi.
 
 })
 
