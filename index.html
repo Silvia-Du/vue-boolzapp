@@ -96,14 +96,10 @@
           <!-- main -->
           <div class="center">
 
-            <div v-for="message in contacts[activeContact].messages" class="mex" :class="mexReceived">
+            <div v-for="message in contacts[activeContact].messages" class="mex" :class="message.status">
               {{message.message}}
+              <span class="mex-date-hour">{{message.date}}</span>
             </div>
-<!-- 
-            <div class="mex" :class="mexSent">
-              <span>Lorem ipsum .</span>
-            </div> -->
-            
 
           </div>
           <!-- footer -->
