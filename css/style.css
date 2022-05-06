@@ -147,18 +147,18 @@ main{
 }
 
 
-/* CHAT */
+/* contact-el */
 
-.left-col .chats{
+.left-col .contact-list{
   height: 100%;
   background-color: #f8f9fa;
   align-items: center;
   overflow-y: auto;
 }
 
-/* CHAT element */
+/* contact-el ***/
 
-.chat{
+.contact-el{
   width: 100%;
   padding: 10px 15px;
   display: flex;
@@ -167,27 +167,27 @@ main{
   border-top: 1px solid #dee0e1;
 }
 
-.chat .left{
+.contact-el .left{
   display: flex;
   align-items: center;
 }
 
-.chat .left .text{
+.contact-el .left .text{
   align-self: flex-start;
 }
 
-.chat .contact-name{
+.contact-el .name{
   font-weight: bold;
   color: #6b7376;
 }
 
-.chat .last-message,
-.chat .last-hour-date{
+.contact-el .last-message,
+.contact-el .last-hour-date{
   font-size: 0.7rem;
   color: #b1b1b1;
 }
 
-.chat:hover{
+.contact-el:hover{
   background-color: #e9ebeb;
 }
 
@@ -238,22 +238,53 @@ main{
 .right-col .center .mex{
   position: relative;
   display: flex;
-  padding: 15px 18px 18px 15px;
+  padding: 15px 20px 20px 15px;
   margin-bottom: 15px;
   border-radius: 10px;
   min-width: 40%;
   max-width: 60%;
 }
 
-.right-col .center .mex span{
+.right-col .center .mex span,
+.right-col .center .mex i{
   position: absolute;
-  right: 5px;
-  bottom: 5px;
   font-size: 0.65rem;
   color: #b6BBBC;
 }
 
+.right-col .center .mex span{
+  right: 5px;
+  bottom: 5px;
+}
 
+.right-col .center .mex i{
+  right: 10px;
+  top: 7px;
+  display: none;
+}
+
+.right-col .center .mex:hover i{
+  display: block;
+}
+
+.right-col .center .mex .dropdown{
+  background-color: white;
+  box-shadow: 5px 5px 10px #b6BBBC;
+  position: absolute;
+  top: 18px;
+  right: 6px;
+  padding: 10px 5px 10px 5px;
+}
+
+.right-col .center .mex .dropdown p{
+  font-size: 0.7rem;
+  color: #6e6767;
+  padding: 5px;
+}
+
+.right-col .center .mex .dropdown p:hover{
+  background-color: #e6ebed;
+}
 
 
 

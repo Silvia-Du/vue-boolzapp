@@ -57,19 +57,22 @@
 
           <div class="search-row">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input v-model="tipedLetter" type="text" placeholder="cerca o inizia una nuova chat">
+  <!--******* sistema questo key up  -->
+            <input v-model="tipedLetter" @keyup.enter=""  type="text" placeholder="cerca o inizia una nuova chat">
           </div>
 
           <!-- chat chatElement -->
-          <div class="chats d-flex-column">
+          <div class="contact-list d-flex-column">
           
-            <div v-for="(contact, index) in contacts" v-if="contact.name.toLowerCase().includes(tipedLetter)" @click="getActiveContact(index)" class="chat">
+            <div class="contact-el"
+            v-for="(contact, index) in contacts"  
+            v-if="contact.name.toLowerCase().includes(tipedLetter)" @click="getActiveContact(index)">
           
               <div class="left">
                 <img class="img-avatar" :src="`./img/avatar${contact.avatar}.jpg`" alt="contact.name">
 
                 <div class="text">
-                  <p class="contact-name">{{contact.name}}</p>
+                  <p class="name">{{contact.name}}</p>
                   <p class="last-message">{{contact.messages[getIndex(contact)].message}}</p>
                 </div> 
               </div>
@@ -104,16 +107,24 @@
           <!-- main -->
           <div class="center">
 
-            <div v-for="message in contacts[activeContact].messages" class="mex" :class="message.status">
+            <div
+            v-for="message in contacts[activeContact].messages" class="mex" :class="message.status">
               {{message.message}}
               <span class="mex-date-hour">{{message.date}}</span>
+              <i 
+              @click="show =!show" 
+              class="fa-solid fa-chevron-down"></i>
+              <div v-show="show" class="dropdown">
+                <p>Info messaggio</p>
+                <p>Cancella messaggio</p>
+              </div>
             </div>
 
           </div>
           <!-- footer -->
           <div class="footer">
             <i class="fa-solid fa-face-smile"></i>
-            <input @keyup.enter="getNewMessage()" v-model="newMessage" type="text" placeholder="scrivi un mex">
+            <input @keyup.enter="getNewMessage()" v-model.trim="newMessage" type="text" placeholder="scrivi un mex">
             <i class="fa-solid fa-microphone"></i>
           </div>
         </div>

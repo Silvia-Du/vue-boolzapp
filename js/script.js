@@ -206,6 +206,8 @@ const app = new Vue({
     tipedLetter: '',
     newMessage:'',
     activeContact: 1,
+    showChevron: false,
+    show : false,
   },
 
   methods:{
@@ -230,8 +232,8 @@ const app = new Vue({
         this.contacts[this.activeContact].messages.push(message);
 
         this.newMessage ='';
-        setTimeout(()=>{
 
+        setTimeout(()=>{
             const botMessage = {
                 date: `${this.getDate()} ${this.getHour()}`,
                 message: this.botMessages[this.randomNum( 0 , this.botMessages.length -1 )],
@@ -246,20 +248,18 @@ const app = new Vue({
         return Math.floor(Math.random() * (max - min +1) + min);
       },
 
+      //questa funzione genera un orario random di accesso per l'utente...nel mondo reale sarebbe un dato che viene richiamato immagino.
       getRandomAccess(){
-
         let hour = this.randomNum( 0 , 23 );
         let min = this.randomNum( 0 , 59 );
-        console.log(hour);
-        console.log(min);
         if(hour < 10){
             hour = '0'+ hour;
         }
+        //li ho dovuti separare se no dava un bug
         if(min < 10){
             min = '0'+ min;
         }
         return `${hour}:${min}`;
-
       },
 
       getDate(){
@@ -274,7 +274,6 @@ const app = new Vue({
       },
   
       getHour(){
-  
         const now = new Date();
         let h = now.getHours(); 
         let m = now.getMinutes(); 
@@ -288,8 +287,6 @@ const app = new Vue({
       }
  
     }
-
- //ogni volta che viene digitata una lettera viene confrontata con le lettere presenti nei nomi dei contatti.
 
 })
 
