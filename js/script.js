@@ -202,8 +202,19 @@ const app = new Vue({
       getIndex(contact){
         const {name, avatar, visible, messages} = contact;
         return contact.messages.length -1;
-      }
+      },
+
+      getActiveContact(index){
+        this.activeContact = index; 
+      },
+
+     
   }
+
+  //devo far si che al cluck dell'utente laterale
+  //'active user(index) sia uguale a quello cliccato
+  //mi passo l'index, assegno a useractiv quell'indice, e lo uso nella main chat ciclando i messaggi di quell'utente
+  
 
 })
 

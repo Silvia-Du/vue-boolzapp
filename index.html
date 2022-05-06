@@ -55,7 +55,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
 
             <!-- chat chatElement -->
-            <div v-for="(contact, index) in contacts" @click="activeContact = index" class="chat">
+            <div v-for="(contact, index) in contacts" @click="getActiveContact(index)" class="chat">
           
               <div class="left">
                 <img class="img-avatar" :src="`./img/avatar${contact.avatar}.jpg`" alt="contact.name">
@@ -96,12 +96,13 @@
           <!-- main -->
           <div class="center">
 
-            <div class="mex" :class="mexReceived">
-              <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, atque.</span>
+            <div v-for="message in contacts[activeContact].messages" class="mex" :class="mexReceived">
+              {{message.message}}
             </div>
+<!-- 
             <div class="mex" :class="mexSent">
               <span>Lorem ipsum .</span>
-            </div>
+            </div> -->
             
 
           </div>
