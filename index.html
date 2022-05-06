@@ -50,15 +50,15 @@
             
           </div>
           <!-- search -->
-          <div class="chats d-flex-column">
-            <div class="search-row">
-              <button><i class="fa-solid fa-magnifying-glass"></i></button>
-              <input type="text" placeholder="cerca o inizia una nuova chat">
-            </div>
-            
-            
 
-            <!-- chat chatElement -->
+          <div class="search-row">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input v-model="tipedLetter" v-on=" searchContact()" type="text" placeholder="cerca o inizia una nuova chat">
+          </div>
+
+          <!-- chat chatElement -->
+          <div class="chats d-flex-column">
+          
             <div v-for="(contact, index) in contacts" @click="getActiveContact(index)" class="chat">
           
               <div class="left">

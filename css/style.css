@@ -116,16 +116,17 @@ main{
   flex-shrink: 0;
 }
 
-/* chats */
+/* search row */
 
-.left-col .chats{
-  height: 100%;
+
+.left-col .search-row{
+  width: 100%;
+  display: flex;
   background-color: #f8f9fa;
-  align-items: center;
-  overflow-y: auto;
 }
 
-.left-col .chats input{
+
+.left-col .search-row input{
   float: left;
   width: 100%;
   margin: 10px 5px 10px 0;
@@ -134,7 +135,7 @@ main{
   border-width: 0px;
 }
 
-.left-col .chats button{
+.left-col .search-row button{
   width: 70px;
   margin: 10px 0 10px 5px;
   border-width: 0px;
@@ -142,14 +143,18 @@ main{
   color: #b1b1b1;
 }
 
-.left-col .chats .search-row{
-  width: 100%;
-  display: flex;
+
+/* CHAT */
+
+.left-col .chats{
+  height: 100%;
+  background-color: #f8f9fa;
+  align-items: center;
+  overflow-y: auto;
 }
 
-
-
 /* CHAT element */
+
 .chat{
   width: 100%;
   padding: 10px 15px;
@@ -183,7 +188,7 @@ main{
   background-color: #e9ebeb;
 }
 
-/* RIGHT SIDE */
+/* RIGHT COL */
 
 .app-container .right-col{
   width: 70%;

@@ -203,6 +203,7 @@ const app = new Vue({
         'una frase molto saggia'
     ],
 
+    tipedLetter: '',
     newMessage:'',
     activeContact: 1,
   },
@@ -233,7 +234,7 @@ const app = new Vue({
             console.log(this.botMessages);
 
             const botMessage = {
-                
+
                 date: 'la data di adesso e l\'orario di adesso',
                 message: this.botMessages[this.randomNum( 0 , this.botMessages.length )],
                 status: 'received'
@@ -245,6 +246,25 @@ const app = new Vue({
 
       randomNum( min , max ){
         return Math.floor(Math.random() * (max - min +1) + min);
+      },
+
+      searchContact(){
+
+        console.log(this.tipedLetter);
+       
+
+        this.contacts.forEach((contact, index)=>{
+            // console.log(contact.name);
+            for (let i = 0; i < contact.name.length; i++) {
+
+                const element = contact.name.split('');
+                // console.log(element);
+                if(element.includes(this.tipedLetter)){
+                    console.log(contact.name);
+                }
+            }
+
+        })
       }
 
      
@@ -253,7 +273,7 @@ const app = new Vue({
         
     }
 
- //dopo tot secondi dall'attivazione della funzione stampa mex in pagina, viene generato un nuovo messaggio con classe received, uso bandierina che ritorna falsa dopo l'invio, pesca i messaggi da un'array di oggetti messaggi.
+ //ogni volta che viene digitata una lettera viene confrontata con le lettere presenti nei nomi dei contatti.
 
 })
 
