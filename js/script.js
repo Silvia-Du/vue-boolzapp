@@ -222,7 +222,7 @@ const app = new Vue({
       getNewMessage(){
 
         const message = {
-            date: 'la data di adesso e l\'orario di adesso',
+            date: `${this.getDate()} ${this.getHour()}`,
             message: this.newMessage,
             status: 'sent'
         }
@@ -235,8 +235,8 @@ const app = new Vue({
 
             const botMessage = {
 
-                date: 'la data di adesso e l\'orario di adesso',
-                message: this.botMessages[this.randomNum( 0 , this.botMessages.length )],
+                date: `${this.getDate()} ${this.getHour()}`,
+                message: this.botMessages[this.randomNum( 0 , this.botMessages.length -1 )],
                 status: 'received'
             }
             this.contacts[this.activeContact].messages.push(botMessage);
@@ -247,6 +247,31 @@ const app = new Vue({
       randomNum( min , max ){
         return Math.floor(Math.random() * (max - min +1) + min);
       },
+
+      getDate(){
+        const now = new Date();
+        let day = now.getDay();
+        let month = now.getMonth();
+        if(now.getDay()< 10 || now.getMonth()< 10){
+          day = `0${day}`;
+          month = `0${month}`;
+        }
+        return `${day} / ${month} / ${now.getFullYear()}`
+      },
+  
+      getHour(){
+  
+        const now = new Date();
+        let h = now.getHours(); 
+        let m = now.getMinutes(); 
+        let s = now.getSeconds();
+        if(h < 10 || m < 10 || s < 10){
+          h= `0${h}`;
+          m= `0${m}`;
+          s= `0${s}`;
+        }
+        return `${h} / ${m} / ${s}`;
+      }
  
     }
 
