@@ -166,8 +166,8 @@ main{
 }
 
 .chat .last-message,
-.chat .hour{
-  font-size: 0.8rem;
+.chat .last-hour-date{
+  font-size: 0.7rem;
   color: #b1b1b1;
 }
 

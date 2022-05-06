@@ -1,11 +1,7 @@
 /*
 Milestone 1
 Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
-l’elenco degli utenti deve essere generato con un v-for e stampare almeno il nome e l’avatar (ultimo messaggio e data per ora possono essere fake)
-
-provate sia con tanti e pochi messaggi con messaggi lunghi o corti. La pagina non si deve mai spaccare
 */
 
 const app = new Vue({
@@ -181,25 +177,14 @@ const app = new Vue({
 
     mexReceived: 'received',
     mexSent: 'sent',
-    lastMsg: '',
   },
 
   methods:{
-      getDate(contact){
+
+      getIndex(contact){
         console.log('----');
         const {name, avatar, visible, messages} = contact;
-        const messageSS = contact.messages;
-
-        messageSS.forEach((message, index)=>{
-            
-            if(index === messageSS.length -1){
-                console.log(message);
-                lastMsg = message;
-                console.log(lastMsg.message);
-            }
-            
-              
-        })
+        return contact.messages.length -1;
       }
   }
 

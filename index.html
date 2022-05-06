@@ -61,12 +61,12 @@
 
                 <div class="text">
                   <p class="contact-name">{{contact.name}}</p>
-                  <p class="last-message">{{contact.messages[0].message}}</p>
+                  <p class="last-message">{{contact.messages[getIndex(contact)].message}}</p>
                 </div> 
               </div>
 
               <div class="right">
-                <p class="hour">{{getDate(contact)}}</p>
+                <p class="last-hour-date">{{contact.messages[getIndex(contact)].date}}</p>
               </div>
               
             </div>
