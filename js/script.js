@@ -192,6 +192,7 @@ const app = new Vue({
         avatar: '_io',
     },
 
+    newMessage:'',
     mexReceived: 'received',
     mexSent: 'sent',
     activeContact: 1,
@@ -208,13 +209,22 @@ const app = new Vue({
         this.activeContact = index; 
       },
 
+      getNewMessage(){
+
+          const message = {
+            date: 'la data di adesso e l\'orario di adesso',
+            message: this.newMessage,
+            status: 'sent'
+        }
+
+        this.contacts[this.activeContact].messages.push(message);
+        
+          this.newMessage ='';
+      }
+
      
   }
-
-  //devo far si che al cluck dell'utente laterale
-  //'active user(index) sia uguale a quello cliccato
-  //mi passo l'index, assegno a useractiv quell'indice, e lo uso nella main chat ciclando i messaggi di quell'utente
-  
+ //all'evento dell'invio, il messaggio digitato diventa un nuovo messaggio pushato nell'array dei messaggi, cn classe sent
 
 })
 

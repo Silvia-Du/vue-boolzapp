@@ -105,7 +105,7 @@
           <!-- footer -->
           <div class="footer">
             <i class="fa-solid fa-face-smile"></i>
-            <input type="text" placeholder="scrivi un mex">
+            <input @keyup.enter="getNewMessage()" v-model="newMessage" type="text" placeholder="scrivi un mex">
             <i class="fa-solid fa-microphone"></i>
           </div>
         </div>
