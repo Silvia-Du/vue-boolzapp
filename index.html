@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <!-- /Google-font -->
+   <!-- DayJs core -->
+   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+    <!-- DayJs core -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Boolzapp</title>
@@ -19,7 +22,7 @@
 
   <div id="app">
     <!-- MAIN -->
-    <main>
+    <main class="d-flex">
       <!-- app container -->
       <div class="container">
 
@@ -120,20 +123,20 @@
               {{message.message}}
               <span class="mex-date-hour">{{message.date}}</span>
 
-                <i
-                @click="clickedDropDown = index"
-                class="fa-solid fa-chevron-down">
-                </i>
-
-                <div 
-                class="dropdown" 
-                v-show="index === clickedDropDown"
-                >
-                  <p>Info messaggio</p>
-                  <p @click="delateMessage(index)">Cancella messaggio</p>
-                </div>
-    
+              <i
+              @click="clickedDropDown = index"
+              class="fa-solid fa-chevron-down">
+              </i>
+              <div 
+              class="dropdown" 
+              v-show="index === clickedDropDown"
+              >
+                <p>Info messaggio</p>
+                <p @click="delateMessage(index)">Cancella messaggio</p>
+              </div>
+              
             </div>
+
             <!-- /chat message -->
           </div>
 

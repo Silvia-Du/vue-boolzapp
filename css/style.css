@@ -17,8 +17,8 @@ body{
 
 .d-flex{
   display: flex;
-  justify-content: main-chat;
-  align-items: main-chat;
+  justify-content: center;
+  align-items: center;
 }
 
 .d-flex-column{
@@ -40,9 +40,6 @@ body{
 
 /* MAIN */
 main{
-  display: flex;
-  justify-content: main-chat;
-  align-items: main-chat;
   height: 100vh;
   background-image: 
   linear-gradient(to bottom,
@@ -65,18 +62,18 @@ main{
   padding: 0 10px;
   flex-shrink: 0;
   display: flex;
-  align-items: main-chat;
+  align-items: center;
   justify-content: space-between;
   background-color: #eaeaea;
 }
 
 
-/* left-col */
+/* LEFT COL */
 
 .container .left-col{
   width: 30%;
 }
-/* left-col HEADER */
+/* Header Left */
 
 .left-col .header{
   border-right: 1px solid rgb(204, 195, 195);
@@ -84,7 +81,7 @@ main{
 
 .left-col .header .user{
   display: flex;
-  align-items: main-chat;
+  align-items: center;
   font-size: 0.9rem;
   font-weight: bold;
   color: rgb(44, 40, 40);
@@ -98,11 +95,11 @@ main{
 }
 
 
-/* notifiche */
+/* Notifiche */
 
 .left-col .notifiche{
   display: flex;
-  align-items: main-chat;
+  align-items: center;
   background-color: #8edafc;
   padding: 10px 15px;
 }
@@ -124,7 +121,7 @@ main{
   flex-shrink: 0;
 }
 
-/* search row */
+/* Search Row */
 
 .left-col .search-row{
   width: 100%;
@@ -151,20 +148,20 @@ main{
 }
 
 
-/* contact */
+/* Contact List */
 
 .left-col .contact-list{
   height: 100%;
   background-color: #f8f9fa;
-  align-items: main-chat;
+  align-items: center;
   overflow-y: auto;
 }
 
-/* contact ***/
+/*** contact ***/
 
 .contact{
   width: 100%;
-  padding: 10px 15px;
+  padding: 14px 15px;
   display: flex;
   position: relative;
   background-color: white;
@@ -175,9 +172,16 @@ main{
   background-color: #dbe2e1;
 }
 
+.contact .text{
+  width: 50%;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 .contact .last-hour-date{
   position: absolute;
-  top: 11px;
+  top: 5px;
   right: 10px;
 }
 
@@ -203,32 +207,34 @@ main{
   justify-content: space-between;
 }
 
-/* right-col Header */
+/* Header Right */
 .avatar-container{
   display: flex;
 }
 
 .avatar-container .text{
-  justify-content: main-chat;
+  justify-content: center;
 }
 
 .avatar-container .text .last-message{
   font-size: 0.8rem;
   color: #6b7376;
 }
-/* MAIN-CHAT */
 
+
+/* MAIN-CHAT */
 .right-col .main-chat{
   display: flex;
   flex-direction: column;
   height: 100%;
   font-size: 0.8rem;
   background-image: url(../img/mine.jpg);
-  background-position: main-chat;
+  background-position: center;
   padding: 60px 80px;
   overflow-y: auto;
 }
 
+/* message */
 .right-col .main-chat .mex{
   position: relative;
   display: flex;
@@ -290,7 +296,7 @@ main{
   background-color: #e6ebed;
 }
 
-.right-col .main-chat .mex:hover .fa-chevron-dow{
+.right-col .main-chat .mex:hover .fa-chevron-down{
   display: block;
 }
 

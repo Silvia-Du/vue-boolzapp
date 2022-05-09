@@ -187,7 +187,7 @@ const app = new Vue({
         
         'assi? ti va se ci vediamo?'
     ],
-
+    now : dayjs().format('DD/ MM/ YYYY HH:mm:ss'),
     tipedLetter: '',
     newMessage:'',
     activeContact: 1,
@@ -202,19 +202,29 @@ const app = new Vue({
 
       },
 
+      /**
+       * restituisce l'indice dell'ultimo elemento di un'array
+       * @param {string} contact 
+       * @returns 
+       */
       getIndex(contact){
-
         return contact.messages.length -1;
       },
 
+      /**
+       * Assegnazione del valore di index ad una variabile, per la selezione di un'elemento
+       * @param {num} index 
+       */
       getActiveContact(index){
         this.activeContact = index; 
       },
 
+      /**
+       * Genera un nuovo messaggio utente e una successiva risposta automatica
+       */
       getNewMessage(){
-
         const message = {
-            date: `${this.getDate()} ${this.getHour()}`,
+            date: this.now,
             message: this.newMessage,
             status: 'sent'
         }
@@ -225,7 +235,7 @@ const app = new Vue({
 
         setTimeout(()=>{
             const botMessage = {
-                date: `${this.getDate()} ${this.getHour()}`,
+                date: this.now,
                 message: this.botMessages[this.randomNum( 0 , this.botMessages.length -1 )],
                 status: 'received'
             }
@@ -234,7 +244,13 @@ const app = new Vue({
         },1000);
       },
 
-      randomNum( min , max ){
+      /**
+       * Generatore di un numero randomico da un minimo ad un amssimo
+       * @param {num} min 
+       * @param {num} max 
+       * @returns 
+       */
+      randomNum( min , max ){     
         return Math.floor(Math.random() * (max - min +1) + min);
       },
 
@@ -256,30 +272,6 @@ const app = new Vue({
             min = '0'+ min;
         }
         return `${hour}:${min}`;
-      },
-
-      getDate(){
-        const now = new Date();
-        let day = now.getDay();
-        let month = now.getMonth();
-        if(now.getDay()< 10 || now.getMonth()< 10){
-          day = `0${day}`;
-          month = `0${month}`;
-        }
-        return `${day}/${month}/${now.getFullYear()}`
-      },
-  
-      getHour(){
-        const now = new Date();
-        let h = now.getHours(); 
-        let m = now.getMinutes(); 
-        let s = now.getSeconds();
-        if(h < 10 || m < 10 || s < 10){
-          h= `0${h}`;
-          m= `0${m}`;
-          s= `0${s}`;
-        }
-        return `${h}/${m}/${s}`;
       }
  
     }
