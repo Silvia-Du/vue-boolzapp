@@ -259,20 +259,15 @@ main{
 
 .right-col .center .mex i{
   right: 10px;
-  top: 7px;
-  display: none;
-}
-
-.right-col .center .mex:hover i{
-  display: block;
+  bottom: 33px;
 }
 
 .right-col .center .mex .dropdown{
+  position: absolute;
+  right: 10px;
+  top: 18px;
   background-color: white;
   box-shadow: 5px 5px 10px #b6BBBC;
-  position: absolute;
-  top: 18px;
-  right: 6px;
   padding: 10px 5px 10px 5px;
 }
 
@@ -286,7 +281,9 @@ main{
   background-color: #e6ebed;
 }
 
-
+.right-col .center .mex:hover i{
+  display: block;
+}
 
 /* right-col footer */
 .right-col .footer i{

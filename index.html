@@ -108,16 +108,20 @@
           <div class="center">
 
             <div
-            v-for="message in contacts[activeContact].messages" class="mex" :class="message.status">
+            @mouseleave="showDropDown = false"
+            v-for="(message, index) in contacts[activeContact].messages" class="mex" :class="message.status">
               {{message.message}}
               <span class="mex-date-hour">{{message.date}}</span>
-              <i 
-              @click="show =!show" 
-              class="fa-solid fa-chevron-down"></i>
-              <div v-show="show" class="dropdown">
-                <p>Info messaggio</p>
-                <p>Cancella messaggio</p>
-              </div>
+
+                <i
+                @click="showDropDown = !showDropDown"
+                class="fa-solid fa-chevron-down"></i>
+                <div class="dropdown" v-show="showDropDown">
+                  <p>Info messaggio</p>
+                  <p>Cancella messaggio</p>
+                </div>
+              
+              
             </div>
 
           </div>

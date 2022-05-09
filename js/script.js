@@ -206,8 +206,7 @@ const app = new Vue({
     tipedLetter: '',
     newMessage:'',
     activeContact: 1,
-    showChevron: false,
-    show : false,
+    showDropDown : false,
   },
 
   methods:{
@@ -247,6 +246,16 @@ const app = new Vue({
       randomNum( min , max ){
         return Math.floor(Math.random() * (max - min +1) + min);
       },
+
+      //voglio che solo il dropdown del messaggio cliccato diventi visible.
+      //allora devo usare una classe che do al messaggio, non a tutti.
+
+
+
+
+
+
+
 
       //questa funzione genera un orario random di accesso per l'utente...nel mondo reale sarebbe un dato che viene richiamato immagino.
       getRandomAccess(){
