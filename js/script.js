@@ -206,10 +206,27 @@ const app = new Vue({
     tipedLetter: '',
     newMessage:'',
     activeContact: 1,
-    showDropDown : false,
+    clickedDropDown : -1,
+    show : false, 
   },
 
   methods:{
+
+      openDropdown(index){
+        this.clickedDropDown = index;
+        show = true; 
+      },
+
+    //   apriti solo se è vero che index è uguale a quello active
+
+    //   delateMessage(index){
+    //    console.log(index, 'index prima');
+    //    const allMessages = this.contacts[this.activeContact].messages;
+    //    allMessages.splice(index, 1)
+    //    console.log(allMessages.length, 'lunghezza arraym');
+       
+       
+    //   },
 
       getIndex(contact){
         const {name, avatar, visible, messages} = contact;
