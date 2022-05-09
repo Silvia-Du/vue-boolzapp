@@ -206,28 +206,19 @@ const app = new Vue({
     tipedLetter: '',
     newMessage:'',
     activeContact: 1,
+    indexToDelate: 0,
     clickedDropDown : -1,
-    show : false, 
   },
 
   methods:{
 
-      openDropdown(index){
-        this.clickedDropDown = index;
-        show = true; 
+      delateMessage(index){
+
+        this.contacts[this.activeContact].messages.splice(index,1);
+
       },
 
-    //   apriti solo se è vero che index è uguale a quello active
-
-    //   delateMessage(index){
-    //    console.log(index, 'index prima');
-    //    const allMessages = this.contacts[this.activeContact].messages;
-    //    allMessages.splice(index, 1)
-    //    console.log(allMessages.length, 'lunghezza arraym');
-       
-       
-    //   },
-
+      
       getIndex(contact){
         const {name, avatar, visible, messages} = contact;
         return contact.messages.length -1;
@@ -264,15 +255,11 @@ const app = new Vue({
         return Math.floor(Math.random() * (max - min +1) + min);
       },
 
-      //voglio che solo il dropdown del messaggio cliccato diventi visible.
-      //allora devo usare una classe che do al messaggio, non a tutti.
 
-
-
-
-
-
-
+    //   audioPlay(){
+    //       const audio = new Audio(url);
+    //       audio.play();
+    //   }
 
       //questa funzione genera un orario random di accesso per l'utente...nel mondo reale sarebbe un dato che viene richiamato immagino.
       getRandomAccess(){

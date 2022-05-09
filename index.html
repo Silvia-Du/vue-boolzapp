@@ -61,7 +61,7 @@
             <input v-model="tipedLetter" @keyup.enter=""  type="text" placeholder="cerca o inizia una nuova chat">
           </div>
 
-          <!-- chat chatElement -->
+          <!-- Contact List -->
           <div class="contact-list d-flex-column">
           
             <div class="contact-el"
@@ -73,12 +73,16 @@
 
                 <div class="text">
                   <p class="name">{{contact.name}}</p>
-                  <p class="last-message">{{contact.messages[getIndex(contact)].message}}</p>
+                  <p 
+                  v-if="contact.messages.length >= 1"
+                  class="last-message">{{contact.messages[getIndex(contact)].message}}</p>
                 </div> 
               </div>
 
               <div class="right">
-                <p class="last-hour-date">{{contact.messages[getIndex(contact)].date}}</p>
+                <p 
+                v-if="contact.messages.length >= 1"
+                class="last-hour-date">{{contact.messages[getIndex(contact)].date}}</p>
               </div>
               
             </div>
@@ -114,7 +118,7 @@
               <span class="mex-date-hour">{{message.date}}</span>
 
                 <i
-                @click="openDropdown(index)"
+                @click="clickedDropDown = index"
                 class="fa-solid fa-chevron-down">
                 </i>
 
