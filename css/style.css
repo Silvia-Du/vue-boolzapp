@@ -216,7 +216,7 @@ main{
   font-size: 0.8rem;
   color: #6b7376;
 }
-/* right-col main-chat */
+/* MAIN-CHAT */
 
 .right-col .main-chat{
   display: flex;
@@ -227,6 +227,16 @@ main{
   background-position: main-chat;
   padding: 60px 80px;
   overflow-y: auto;
+}
+
+.right-col .main-chat .mex{
+  position: relative;
+  display: flex;
+  padding: 15px 20px 20px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  min-width: 40%;
+  max-width: 60%;
 }
 
 .right-col .main-chat .mex.sent{
@@ -240,15 +250,7 @@ main{
   align-self: flex-start;
 }
 
-.right-col .main-chat .mex{
-  position: relative;
-  display: flex;
-  padding: 15px 20px 20px 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  min-width: 40%;
-  max-width: 60%;
-}
+
 
 .right-col .main-chat .mex span,
 .right-col .main-chat .mex i{
@@ -262,9 +264,10 @@ main{
   bottom: 5px;
 }
 
-.right-col .main-chat .mex i{
+.right-col .main-chat .mex .fa-chevron-down{
   right: 10px;
   bottom: 33px;
+  display: none;
 }
 
 .right-col .main-chat .mex .dropdown{
@@ -276,6 +279,7 @@ main{
   padding: 10px 5px 10px 5px;
 }
 
+
 .right-col .main-chat .mex .dropdown p{
   font-size: 0.7rem;
   color: #6e6767;
@@ -286,11 +290,11 @@ main{
   background-color: #e6ebed;
 }
 
-.right-col .main-chat .mex:hover i{
+.right-col .main-chat .mex:hover .fa-chevron-dow{
   display: block;
 }
 
-/* right-col footer */
+/* FOOTER RIGHT */
 .right-col .footer i{
   font-size: 1.3rem;
   color: #6b7376;

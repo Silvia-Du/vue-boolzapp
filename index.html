@@ -26,7 +26,7 @@
         <!-- LEFT COL -->
         <div class="left-col d-flex-column">
 
-          <!--left-s header -->
+          <!--Header Left -->
           <div class="header">
 
             <div class="user">
@@ -42,7 +42,7 @@
 
           </div>
 
-          <!-- notifiche-->
+          <!-- Notifiche-->
           <div class="notifiche">
 
             <div class="logo-notifiche d-flex">
@@ -56,7 +56,7 @@
             
           </div>
 
-          <!-- search -->
+          <!-- Search Row-->
           <div class="search-row">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
             <input v-model="tipedLetter"  type="text" placeholder="cerca o inizia una nuova chat">
@@ -65,6 +65,7 @@
           <!-- Contact List -->
           <div class="contact-list d-flex-column">
           
+            <!-- Contact -->
             <div class="contact"
             :class="{'active': activeContact === index}"
             v-for="(contact, index) in contacts"  
@@ -83,16 +84,17 @@
                 <p 
                 v-if="contact.messages.length >= 1"
                 class="last-hour-date">{{contact.messages[getIndex(contact)].date}}</p>
-              
-              
+                
             </div>
+            <!-- contact -->
             
           </div>
         </div>
-
+        <!-- /LEFT COL -->
         <!-- RIGHT COL -->
         <div class="right-col d-flex-column">
-          <!-- header -->
+
+          <!-- Header Right -->
           <div class="header">
             <div class="avatar-container">
               <img class="img-avatar" :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" alt="avatar 1">
@@ -108,9 +110,10 @@
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
-          <!-- main -->
+          <!-- MAIN CHAT -->
           <div class="main-chat">
 
+            <!-- chat message -->
             <div
             @mouseleave ="clickedDropDown = -1"
             v-for="(message, index) in contacts[activeContact].messages" class="mex" :class="message.status">
@@ -129,12 +132,12 @@
                   <p>Info messaggio</p>
                   <p @click="delateMessage(index)">Cancella messaggio</p>
                 </div>
-              
-              
+    
             </div>
-
+            <!-- /chat message -->
           </div>
-          <!-- footer -->
+
+          <!-- Footer Right-->
           <div class="footer">
             <i class="fa-solid fa-face-smile"></i>
             <input @keyup.enter="getNewMessage()" v-model.trim="newMessage" type="text" placeholder="scrivi un mex">
