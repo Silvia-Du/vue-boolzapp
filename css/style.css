@@ -15,14 +15,20 @@ body{
   font-family: 'Lato', sans-serif;;
 }
 
+.d-flex{
+  display: flex;
+  justify-content: main-chat;
+  align-items: main-chat;
+}
+
 .d-flex-column{
   display: flex;
   flex-direction: column;
 }
 
 .img-avatar{
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   margin-right: 10px;
   border-radius: 50%;
 }
@@ -34,6 +40,9 @@ body{
 
 /* MAIN */
 main{
+  display: flex;
+  justify-content: main-chat;
+  align-items: main-chat;
   height: 100vh;
   background-image: 
   linear-gradient(to bottom,
@@ -41,25 +50,22 @@ main{
 }
 
 /* APP CONTAINER */
-.app-container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.container{
+  display: flex;
   height: 750px;
   width: 80%;
-  min-width: 600px;
-  display: flex;
+  min-width: 950px;
+  max-width: 1800px;
 }
 
-.app-container .left-col .header,
-.app-container .right-col .header,
-.app-container .right-col .footer{
+.container .left-col .header,
+.container .right-col .header,
+.container .right-col .footer{
   height: 65px;
   padding: 0 10px;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
+  align-items: main-chat;
   justify-content: space-between;
   background-color: #eaeaea;
 }
@@ -67,20 +73,18 @@ main{
 
 /* left-col */
 
-.app-container .left-col{
+.container .left-col{
   width: 30%;
 }
-/* left-s HEADER */
+/* left-col HEADER */
 
 .left-col .header{
-  justify-content: space-between;
-  align-items: center;
   border-right: 1px solid rgb(204, 195, 195);
 }
 
 .left-col .header .user{
   display: flex;
-  align-items: center;
+  align-items: main-chat;
   font-size: 0.9rem;
   font-weight: bold;
   color: rgb(44, 40, 40);
@@ -98,7 +102,7 @@ main{
 
 .left-col .notifiche{
   display: flex;
-  align-items: center;
+  align-items: main-chat;
   background-color: #8edafc;
   padding: 10px 15px;
 }
@@ -109,18 +113,18 @@ main{
   text-decoration: underline;
 }
 
-.left-col .notifiche .img-avatar{
+.left-col .notifiche .logo-notifiche{
   background-color: #f2fbff;
-  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  border-radius: 50%;
   font-size: 1.3rem;
   color: #8edafc;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
 }
 
 /* search row */
-
 
 .left-col .search-row{
   width: 100%;
@@ -147,53 +151,54 @@ main{
 }
 
 
-/* contact-el */
+/* contact */
 
 .left-col .contact-list{
   height: 100%;
   background-color: #f8f9fa;
-  align-items: center;
+  align-items: main-chat;
   overflow-y: auto;
 }
 
-/* contact-el ***/
+/* contact ***/
 
-.contact-el{
+.contact{
   width: 100%;
   padding: 10px 15px;
   display: flex;
-  justify-content: space-between;
+  position: relative;
   background-color: white;
   border-top: 1px solid #dee0e1;
 }
 
-.contact-el .left{
-  display: flex;
-  align-items: center;
+.contact.active{
+  background-color: #dbe2e1;
 }
 
-.contact-el .left .text{
-  align-self: flex-start;
+.contact .last-hour-date{
+  position: absolute;
+  top: 11px;
+  right: 10px;
 }
 
-.contact-el .name{
+.contact .name{
   font-weight: bold;
   color: #6b7376;
 }
 
-.contact-el .last-message,
-.contact-el .last-hour-date{
+.contact .last-message,
+.contact .last-hour-date{
   font-size: 0.7rem;
   color: #b1b1b1;
 }
 
-.contact-el:hover{
+.contact:hover{
   background-color: #e9ebeb;
 }
 
 /* RIGHT COL */
 
-.app-container .right-col{
+.container .right-col{
   width: 70%;
   justify-content: space-between;
 }
@@ -204,38 +209,38 @@ main{
 }
 
 .avatar-container .text{
-  justify-content: center;
+  justify-content: main-chat;
 }
 
 .avatar-container .text .last-message{
   font-size: 0.8rem;
   color: #6b7376;
 }
-/* right-col CENTER */
+/* right-col main-chat */
 
-.right-col .center{
+.right-col .main-chat{
   display: flex;
   flex-direction: column;
   height: 100%;
   font-size: 0.8rem;
   background-image: url(../img/mine.jpg);
-  background-position: center;
+  background-position: main-chat;
   padding: 60px 80px;
   overflow-y: auto;
 }
 
-.right-col .center .mex.sent{
+.right-col .main-chat .mex.sent{
   background-color: #d5f9ba;
   align-self: flex-end;
   
 }
 
-.right-col .center .mex.received{
+.right-col .main-chat .mex.received{
   background-color: white;
   align-self: flex-start;
 }
 
-.right-col .center .mex{
+.right-col .main-chat .mex{
   position: relative;
   display: flex;
   padding: 15px 20px 20px 15px;
@@ -245,24 +250,24 @@ main{
   max-width: 60%;
 }
 
-.right-col .center .mex span,
-.right-col .center .mex i{
+.right-col .main-chat .mex span,
+.right-col .main-chat .mex i{
   position: absolute;
   font-size: 0.65rem;
   color: #b6BBBC;
 }
 
-.right-col .center .mex span{
+.right-col .main-chat .mex span{
   right: 5px;
   bottom: 5px;
 }
 
-.right-col .center .mex i{
+.right-col .main-chat .mex i{
   right: 10px;
   bottom: 33px;
 }
 
-.right-col .center .mex .dropdown{
+.right-col .main-chat .mex .dropdown{
   position: absolute;
   right: 10px;
   top: 18px;
@@ -271,17 +276,17 @@ main{
   padding: 10px 5px 10px 5px;
 }
 
-.right-col .center .mex .dropdown p{
+.right-col .main-chat .mex .dropdown p{
   font-size: 0.7rem;
   color: #6e6767;
   padding: 5px;
 }
 
-.right-col .center .mex .dropdown p:hover{
+.right-col .main-chat .mex .dropdown p:hover{
   background-color: #e6ebed;
 }
 
-.right-col .center .mex:hover i{
+.right-col .main-chat .mex:hover i{
   display: block;
 }
 

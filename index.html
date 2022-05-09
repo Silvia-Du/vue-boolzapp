@@ -21,7 +21,7 @@
     <!-- MAIN -->
     <main>
       <!-- app container -->
-      <div class="app-container">
+      <div class="container">
 
         <!-- LEFT COL -->
         <div class="left-col d-flex-column">
@@ -44,31 +44,33 @@
 
           <!-- notifiche-->
           <div class="notifiche">
-            <div class="img-avatar">
+
+            <div class="logo-notifiche d-flex">
               <i class="fa-solid fa-bell-slash"></i>
             </div>
+
             <div class="text">
               <p class="title">Ricevi notifiche di nuovi messaggi</p>
               <p class="subtitle">attiva notifiche sul dekstop</p>
             </div>
             
           </div>
-          <!-- search -->
 
+          <!-- search -->
           <div class="search-row">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
-  <!--******* sistema questo key up  -->
-            <input v-model="tipedLetter" @keyup.enter=""  type="text" placeholder="cerca o inizia una nuova chat">
+            <input v-model="tipedLetter"  type="text" placeholder="cerca o inizia una nuova chat">
           </div>
 
           <!-- Contact List -->
           <div class="contact-list d-flex-column">
           
-            <div class="contact-el"
+            <div class="contact"
+            :class="{'active': activeContact === index}"
             v-for="(contact, index) in contacts"  
             v-if="contact.name.toLowerCase().includes(tipedLetter)" @click="getActiveContact(index)">
           
-              <div class="left">
+              
                 <img class="img-avatar" :src="`./img/avatar${contact.avatar}.jpg`" alt="contact.name">
 
                 <div class="text">
@@ -77,13 +79,11 @@
                   v-if="contact.messages.length >= 1"
                   class="last-message">{{contact.messages[getIndex(contact)].message}}</p>
                 </div> 
-              </div>
 
-              <div class="right">
                 <p 
                 v-if="contact.messages.length >= 1"
                 class="last-hour-date">{{contact.messages[getIndex(contact)].date}}</p>
-              </div>
+              
               
             </div>
             
@@ -109,7 +109,7 @@
             </div>
           </div>
           <!-- main -->
-          <div class="center">
+          <div class="main-chat">
 
             <div
             @mouseleave ="clickedDropDown = -1"
