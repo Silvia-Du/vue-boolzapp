@@ -284,6 +284,7 @@ main{
   background-color: white;
   box-shadow: 5px 5px 10px #b6BBBC;
   padding: 10px 5px 10px 5px;
+  cursor: pointer;
 }
 
 
